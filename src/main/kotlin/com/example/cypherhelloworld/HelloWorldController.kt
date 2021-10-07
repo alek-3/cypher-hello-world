@@ -11,5 +11,5 @@ class HelloWorldController {
     fun hello(): String = "Hello World"
 
     @GetMapping("/hello/name")
-    fun name(@RequestParam name: String) = HelloNameResponse("Hello, $name")
+    fun name(@RequestParam name: String): HelloNameResponse = HelloNameResponse("Hello, $name")
 }
