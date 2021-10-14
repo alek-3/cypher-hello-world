@@ -10,8 +10,6 @@ import org.springframework.web.servlet.NoHandlerFoundException
 class ApiExceptionHandlerAdvice {
 
     @ExceptionHandler(NoHandlerFoundException::class)
-    @ResponseStatus(value= HttpStatus.NOT_FOUND)
-    fun handleNoHandlerFoundException() : ApiErrorResponse {
-        return ApiErrorResponse("no handler found")
-    }
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
+    fun handleNoHandlerFoundException(): ApiErrorResponse = ApiErrorResponse("no handler found")
 }
