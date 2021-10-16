@@ -12,4 +12,10 @@ class HelloWorldController {
 
     @GetMapping("/hello/name")
     fun name(@RequestParam name: String): HelloNameResponse = HelloNameResponse("Hello, $name")
+
+    // 例外テスト用
+    @GetMapping("/throw-exception")
+    fun throwException() {
+        throw ApiException("テスト用のエラーです")
+    }
 }
