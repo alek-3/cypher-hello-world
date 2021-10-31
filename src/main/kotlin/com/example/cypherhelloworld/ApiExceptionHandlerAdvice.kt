@@ -17,5 +17,5 @@ class ApiExceptionHandlerAdvice {
     @ExceptionHandler(ConstraintViolationException::class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     fun handleConstraintViolationException(exception: ConstraintViolationException): ApiErrorResponse =
-        ApiErrorResponse("invalid parameter: ${exception.message}")
+        ApiErrorResponse("invalid parameter: detail: [${exception.message}]")
 }
