@@ -4,3 +4,11 @@ spring:
   web:
     resources:
       add-mappings: false
+  config:
+    import: classpath:application-message.yml
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+    import: classpath:application-message-dev.yml
